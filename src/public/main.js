@@ -1,21 +1,11 @@
 // js del frontEnd
-// este socket emite eventos atraves del objeto io
-const socket = io()
+// para importar en el front al contrario del back requerimos aclarar la extencion dela archivo a importar, es decir si es .js/.html. esto es por el estandar del navegador 
+import {loadnotes, onNewNote} from "./socketFront.js"
 
-socket.on("loadnotes", (data)=>{
-console.log(data);
-})
-
-const noteFrom1 = document.querySelector("#noteFrom")
-
-noteFrom1.addEventListener("Submit", (e) =>{
-    e.preventDefault()
-console.log('====================================');
-console.log(
-    noteFrom1["title"].value,
-    noteFrom1["description"].value
-);
-console.log('====================================');
+import {onHandleSubmit, renderNotes, appenNote} from "./ui.js"
+onNewNote(appenNote)
+loadnotes(renderNotes)
+const buttonF = document.querySelector("#buttonFrom")
+buttonF.addEventListener("click", onHandleSubmit)
 
 
-})

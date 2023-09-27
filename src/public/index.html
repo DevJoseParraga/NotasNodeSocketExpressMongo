@@ -7,16 +7,20 @@
 </head>
 <body>
 
-    <form id="noteFrom">
-        <input type="title">
+    <form  id="noteFrom">
+        <input type="text" id="title">
         <textarea id="description" rows="3"></textarea>
-        <button type="submit">submit</button>
+        <button type="submit" id="buttonFrom">Send</button>
     </form>
 
-    <h1>hola mundo</h1>
+    <ul id="notes">
+        
+    </ul>
+
+  
     <!-- conexion a la libreria de socket.io -->
     <script src="/socket.io/socket.io.js"></script>
     <!-- conexion al js del front -->
-    <Script src="./main.js"></Script>
+    <Script src="./main.js" type="module"></Script>
 </body>
 </html>
